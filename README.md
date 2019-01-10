@@ -1,5 +1,7 @@
 # visual-room
 
+this project is demo project, contain **vue.js, three.js, tween.js**.
+
 ## Project setup
 ```
 yarn install
