@@ -2,7 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/center">center 数据中心</router-link> |
+      <router-link to="/cabinet">cabinet 机柜</router-link> |
+      <router-link to="/device">device 设备</router-link>
     </div>
     <router-view />
   </div>
@@ -13,11 +15,12 @@
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
+  // padding: 30px;
+  margin-bottom: 20px;
   a {
     font-weight: bold;
     color: #2c3e50;

@@ -1,7 +1,5 @@
 <style lang="less" scoped>
 #container{
-  // padding: 200px;
-  // margin: 200px;
 }
 </style>
 
@@ -55,7 +53,7 @@ export default {
         scene.add(axes);
 
         // 地板
-        var texture = new THREE.TextureLoader().load(require('../assets/img/floor.jpg') );
+        var texture = new THREE.TextureLoader().load(require('../../assets/img/floor.jpg') );
         texture.wrapS = THREE.RepeatWrapping;
         texture.wrapT = THREE.RepeatWrapping;
         texture.repeat.set(50, 50);
@@ -208,7 +206,7 @@ export default {
         // var doorGeometry = new THREE.BoxGeometry(256, 512, depth);
         var doorGeometry = new THREE.BoxGeometry(sideDoorWidth, sideDoorHeight, depth);
         doorGeometry.translate(sideDoorWidth / 2, 0, 0);
-        var doorMaterial = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(require('../assets/img/door.jpg'))});
+        var doorMaterial = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(require('../../assets/img/door.jpg'))});
 
         var rightDoor = new THREE.Mesh(doorGeometry, doorMaterial);
         rightDoor.name = 'rightDoor';
