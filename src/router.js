@@ -24,7 +24,7 @@ export default new Router({
         {
           path: 'assembly',
           name: 'centerAssembly',
-          component: () => import('./views/center/assembly')
+          component: () => import('./views/center/assembly'),
         },
       ],
     },
