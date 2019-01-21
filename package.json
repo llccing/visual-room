@@ -12,6 +12,7 @@
     "@tweenjs/tween.js": "^17.2.0",
     "bootstrap": "^3.4.0",
     "dat.gui": "^0.7.5",
+    "iview": "^3.2.2",
     "stats.js": "^0.17.0",
     "three": "^0.100.0",
     "vue": "^2.5.21",
