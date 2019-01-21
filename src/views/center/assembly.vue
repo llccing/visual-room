@@ -183,7 +183,7 @@ export default {
 
       this.cabinetArr.forEach(rowItem => {
         rowItem.forEach(item => {
-          if (item.choose) {
+          if (item.classes.choose) {
             item.info = chooseItem;
             item.filled = true;
             item.classes.choose = false;
