@@ -1,5 +1,13 @@
 <template>
   <div class="drag-demo">
+    <h3>说明</h3>
+    <p>
+      这个拖拽效果是通过HTML5的draggable来实现的，资料说，适合简单的场景。
+      如果后期使用中，发现操作起来比较麻烦，可以考虑使用Vue.Draggable库。
+    </p>
+    <p>
+      所以这个打算用来做，向机房中拖机柜。
+    </p>
     <div id="columns" class="clearfix">
       <div class="column" draggable="true">
         <header>A</header>
