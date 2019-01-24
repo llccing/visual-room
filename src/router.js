@@ -17,14 +17,19 @@ export default new Router({
       component: () => import(/* webpackChunkName: 'center' */ './views/center/index'),
       children: [
         {
-          path: 'demo1',
+          path: 'threejs-whole',
           name: 'centerDemo1',
-          component: () => import(/* webpackChunkName: 'centerDemo1' */ './views/center/demo1'),
+          component: () => import(/* webpackChunkName: 'centerDemo1' */ './views/center/threejs-whole'),
         },
         {
           path: 'assembly',
           name: 'centerAssembly',
           component: () => import('./views/center/assembly'),
+        },
+        {
+          path: 'drag',
+          name: 'centerDrag',
+          component: () => import('./views/center/drag'),
         },
       ],
     },
