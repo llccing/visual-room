@@ -27,6 +27,11 @@ export default new Router({
           component: () => import('./views/center/assembly'),
         },
         {
+          path: 'assembly2',
+          name: 'centerAssembly2',
+          component: () => import('./views/center/assembly2'),
+        },
+        {
           path: 'drag',
           name: 'centerDrag',
           component: () => import('./views/center/drag'),
