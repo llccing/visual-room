@@ -1,36 +1,16 @@
 # visual-room
 
-this project is demo project, contain **vue.js, three.js, tween.js**.
+本项目是Three.js结合Vue全家桶的一个基础项目，在此之上你可以使用Three.js尽情发挥。
 
-## Project setup
-```
-yarn install
-```
+## 依赖
+- Vue全家桶（Vue/Vue-router/Vuex）
+- Three.js
+- Tween.js
+- bootstrap
+- iview
 
-### Compiles and hot-reloads for development
+## Getting started
 ```
+yarn install 
 yarn run serve
 ```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Run your unit tests
-```
-yarn run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
