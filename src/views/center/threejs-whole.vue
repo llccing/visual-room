@@ -206,7 +206,13 @@ export default {
         // var doorGeometry = new THREE.BoxGeometry(256, 512, depth);
         var doorGeometry = new THREE.BoxGeometry(sideDoorWidth, sideDoorHeight, depth);
         doorGeometry.translate(sideDoorWidth / 2, 0, 0);
-        var doorMaterial = new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(require('../../assets/img/door.jpg'))});
+        var doorMaterial = new THREE.MeshBasicMaterial({
+           map: new THREE.TextureLoader().load(require('../../assets/img/door_right.png')),
+           transparent: 0,
+            // side: THREE.DoubleSide,
+            // side: THREE.FrontSide,
+            // side: THREE.BackSide,
+           });
 
         var rightDoor = new THREE.Mesh(doorGeometry, doorMaterial);
         rightDoor.name = 'rightDoor';
@@ -287,10 +293,14 @@ export default {
       // 创建机柜
       function createCabinet() {
         //创建一个立方体
-        const serverWidth = C_ROOM_WIDTH / 20;
-        const serverHeight = C_WALL_HEIGHT * 0.7;
-        const serverDepth = C_ROOM_WIDTH / 20;
-
+        // const serverWidth = C_ROOM_WIDTH / 20;
+        // const serverHeight = C_WALL_HEIGHT * 0.7;
+        // const serverDepth = C_ROOM_WIDTH / 20;
+        
+        const serverWidth = 256;
+        const serverHeight = 1024;
+        const serverDepth = 256;
+        
         for (let i = 0; i < 8; i++) {
           let cube = createCabinetOne(serverWidth, serverHeight, serverDepth);
           //设置立方体的位置
@@ -337,12 +347,13 @@ export default {
         var cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xffaa00, wireframe: true });
         var materials = [
           new THREE.MeshBasicMaterial({ color: 0x000000 }),
+          new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(require('../../assets/img/rack_front_door.jpg')) }),
           new THREE.MeshBasicMaterial({ color: 0x000000 }),
           new THREE.MeshBasicMaterial({ color: 0x000000 }),
           new THREE.MeshBasicMaterial({ color: 0x000000 }),
           new THREE.MeshBasicMaterial({ color: 0x000000 }),
-          // new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('./assets/server-front.jpg') }),
-          new THREE.MeshBasicMaterial({ color: 0x000000 }),
+
+          // new THREE.MeshBasicMaterial({ color: 0x000000 }),
         ];
         cube = new THREE.Mesh(cubeGeometry, materials);
         cube.castShadow = true;

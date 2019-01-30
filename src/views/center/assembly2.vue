@@ -457,7 +457,7 @@ export default {
   }
 
   .demo-move {
-    @box-width: 100px;
+    @box-width: 800px;
     .drag-box {
       user-select: none;
       background: #f0f0f0;
