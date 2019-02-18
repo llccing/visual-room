@@ -5,7 +5,6 @@ const hostPath = 'http://gh.llccing.cn/visual-room/'
 const BASE_URL = process.env.NODE_ENV === 'production' ? hostPath : '/'
 
 module.exports = {
-  baseUrl: BASE_URL,
+  publicPath: BASE_URL,
   productionSourceMap: false,
-  outputDir:'docs'
 }
