@@ -7,4 +7,5 @@ const BASE_URL = process.env.NODE_ENV === 'production' ? hostPath : '/'
 module.exports = {
   baseUrl: BASE_URL,
   productionSourceMap: false,
+  outputDir:'docs'
 }
