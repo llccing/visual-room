@@ -6,7 +6,8 @@ import store from './store';
 import * as THREE from 'three';
 import Stats from 'stats.js';
 import TWEEN from '@tweenjs/tween.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'iview/dist/styles/iview.css';
 

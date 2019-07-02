@@ -1,11 +1,11 @@
 export default class Event {
-  constructor(sceneInstance, objects) {
+  constructor(sceneInstance, objects, callback) {
     this.sceneInstance = sceneInstance
 
-    this.bindEvent(objects);
+    this.bindEvent(objects, callback);
   }
 
-  bindEvent(objects) {
+  bindEvent(objects,callback) {
     // 缓存之前点击过的server
     let self = this;
     const sceneInstance = this.sceneInstance;
@@ -32,13 +32,15 @@ export default class Event {
       //返回射线选中的对象
       var intersects = raycaster.intersectObjects(objects);
       if (intersects.length > 0) {
+        callback(intersects)
         if (lastIntersects.length > 0) {
           let has = false;
           for (let i = 0; i < lastIntersects.length; i++) {
             if (lastIntersects[i].object.uuid === intersects[0].object.uuid) {
               has = true;
               // self.hideCabinetInfo();
-              lastIntersects[i].object.material.forEach((item) => {
+              lastIntersects[i].object.material.forEach((item, idx) => {
+                if(idx>0)
                 item.color.set(0x323232);
               });
               lastIntersects.splice(i, 1);
@@ -49,21 +51,25 @@ export default class Event {
             // self.showCabinetInfo(Math.random());
             // self.hideCabinetWrapper();
             lastIntersects.push(intersects[0]);
-            intersects[0].object.material.forEach((item) => {
-              item.color.set(0xff0000);
+            intersects[0].object.material.forEach((item, idx) => {
+            if(idx>0)
+            item.color.set(0xff0000);
             });
           }
         } else {
           // self.showCabinetInfo(Math.random());
           lastIntersects.push(intersects[0]);
-          intersects[0].object.material.forEach((item) => {
+          intersects[0].object.material.forEach((item, idx) => {
+            if(idx>0)
             item.color.set(0xff0000);
           });
         }
       } else {
+        callback([])
         objects.forEach((server) => {
-          server.material.forEach((item) => {
-            // item.color.set(0x323232);
+          server.material.forEach((item, idx) => {
+            if(idx>0)
+            item.color.set(0x323232);
           });
         });
       }
