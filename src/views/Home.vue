@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Card dis-hover>
+    <Card dis-hover title="机柜列表">
       <Table :data="tableData" :columns="tableColumns"></Table>
     </Card>
   </div>

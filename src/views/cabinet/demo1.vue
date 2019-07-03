@@ -5,7 +5,7 @@
       <Icon @click="backHome" type="md-home" />
       <Icon @click="showPower" type="ios-flame-outline" />
 
-      <Icon type="md-information" />
+      <Icon @click="info" type="md-information" />
     </div>
     <Modal title="服务器详情" v-model="cabinetModalShow">
       <h1>详情展示</h1>
@@ -42,6 +42,10 @@ export default {
       this.cabinetInstance.showPower(this.showPowerFlag);
       console.log(this.sceneInstance);
     },
+
+    info(){
+      this.$Message.success({content: '展示信息！'})
+    }
   },
   mounted() {
 
