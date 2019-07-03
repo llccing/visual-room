@@ -1,11 +1,8 @@
 import Cabinet from './CabinetFactory'
 import Server from './serverFactory'
-import Scene from './Scene'
-import Event from './Event'
+import SceneFactory from './SceneFactory'
 
-Scene.Cabinet = Cabinet;
-Scene.Server = Server;
-Scene.Event = Event;
+SceneFactory.Cabinet = Cabinet;
+SceneFactory.Server = Server;
 
-
-export default Scene
+export default SceneFactory

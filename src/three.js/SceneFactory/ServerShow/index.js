@@ -23,11 +23,11 @@ export default class Scene {
     let container = document.getElementById(containerId);
 
     // 可以通过图片增加背景，但是效果不好
-    let texture = new THREE.TextureLoader().load(require('./image/sky2.jpg'));
+    // let texture = new THREE.TextureLoader().load(require('./image/sky2.jpg'));
 
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xb0b0b0);
-    this.scene.background = texture
+    // this.scene.background = texture
     
     // 调整镜头
     this.camera = new THREE.PerspectiveCamera(75, this.sceneWidth/this.sceneHeight, 0.2, this.sceneWidth*20)

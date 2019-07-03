@@ -1,5 +1,4 @@
 import config from './config';
-import Event from '../../Event';
 
 export default class Cabinet {
   static degToRad = Math.PI / 180;

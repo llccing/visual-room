@@ -39,17 +39,11 @@ export default new Router({
       ],
     },
     {
-      path: '/cabinet',
-      name: 'cabinet',
-      component: () => import('./views/cabinet/index'),
-      children: [
-        {
-          path: 'demo1',
-          name: 'cabinetDemo1',
-          component: () => import('./views/cabinet/demo1'),
-        },
-      ],
+      path: '/cabinet/demo1',
+      name: 'cabinetDemo1',
+      component: () => import('./views/cabinet/demo1'),
     },
+
     {
       path: '/device',
       name: 'device',

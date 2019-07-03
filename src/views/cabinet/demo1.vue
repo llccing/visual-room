@@ -2,7 +2,7 @@
   <div class="demo1">
     <div class="cabinet-container" id="cabinetContainer"></div>
     <div class="controls">
-      <Icon type="md-home" />
+      <Icon @click="backHome" type="md-home" />
       <Icon @click="showPower" type="ios-flame-outline" />
 
       <Icon type="md-information" />
@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import Scene from '../../three.js/index';
+import SceneFactory from '../../three.js/index';
 
 export default {
   data() {
@@ -26,6 +26,9 @@ export default {
     };
   },
   methods: {
+    backHome(){
+      this.$router.push({name: 'home'})
+    },
     showCabinetInfo(data) {
       this.cabinetModalShow = true;
     },
@@ -41,41 +44,39 @@ export default {
     },
   },
   mounted() {
-    console.log(window.innerWidth);
-    console.log(window.innerHeight);
-    this.sceneInstance = new Scene(
+
+    this.sceneInstance = new SceneFactory.ServerShow(
       'cabinetContainer',
       window.innerWidth,
       window.innerHeight,
     );
     // this.sceneInstance = new Scene('cabinetContainer', 2000, 1200);
-    let T36042 = new Scene.Cabinet.T36042(this.sceneInstance, this);
-    let DELL_E52603V4 = new Scene.Server.DELL_E52603V4();
-    let DELL_E52603V4V2 = new Scene.Server.DELL_E52603V4();
-    let DELL_E52603V4V3 = new Scene.Server.DELL_E52603V4();
+    let T36042 = new SceneFactory.Cabinet.T36042(this.sceneInstance, this);
+    let DELL_E52603V4 = new SceneFactory.Server.DELL_E52603V4();
+    let DELL_E52603V4V2 = new SceneFactory.Server.DELL_E52603V4();
+    let DELL_E52603V4V3 = new SceneFactory.Server.DELL_E52603V4();
 
     T36042.addServer([
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
-      new Scene.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
+      new SceneFactory.Server.DELL_E52603V4(),
     ]);
     this.cabinetInstance = T36042;
-    // new Scene.Event(this.sceneInstance)
     this.sceneInstance.scene.add(T36042.group);
 
     window.addEventListener(
@@ -117,6 +118,7 @@ export default {
     background-color: #fff;
     font-size: 30px;
     width: 50px;
+    height: 400px;
     border-radius: 4px;
     padding: 0 10px;
 
