@@ -14,3 +14,14 @@
 yarn install 
 yarn run serve
 ```
+
+## 演示页面更新方式
+
+```js
+cd dist
+git init
+git add -A
+git commit -m 'deploy'
+// 这句最重要
+git push -f git@github.com:llccing/visual-room.git master:gh-pages
+```
